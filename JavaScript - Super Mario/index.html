@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- file(s) css -->
+  <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
+  <title>Game - Super Mario</title>
+</head>
+<body>
+  <div class="game">
+    <img class="mario" src="./assets/img/mario.gif" alt="mario">
+    <img class="pipe" src="./assets/img/pipe.png" alt="cano">
+    <img class="clouds" src="./assets/img/clouds.png" alt="nuvem">
+    
+    <button class="start" onclick="startGame()">Iniciar</button>
+  </div>
+
+  <div class="game-over">
+    <button onclick="restartGame()">Reiniciar</button>
+    <img src="./assets/img/game-over-title.png" alt="game-over-title">
+  </div>
+
+  <div class="grid-container"></div>
+
+  <!-- file(s) js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
