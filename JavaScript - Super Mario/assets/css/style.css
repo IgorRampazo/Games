@@ -1,0 +1,128 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.game
+{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.grid-container 
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 10px);
+    grid-template-rows: repeat(2, 10px);
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 10px dashed #923322;
+    background: #C2714E;
+}
+
+button 
+{
+    background: #008000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: none;
+    padding: 1rem 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+button:hover 
+{
+    border: 2px solid green;
+    background: none;
+    color: green;
+}
+
+.game-over 
+{
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.512);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.game-over img
+{
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: 60%;
+}
+
+.pipe 
+{
+    position: absolute;
+    bottom: 30px;
+    right: -80px;
+    width: 80px;
+}
+
+.mario
+{
+    width: 150px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.clouds 
+{
+    width: 550px;
+    position: absolute;
+    top: 0;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes clouds-animation 
+{
+    from {right: -550px;}
+    to {right: 100%;}
+}
+
+.pipe-animation {animation: pipe-animation 2s infinite linear;}
+
+@keyframes pipe-animation 
+{
+    from {right: -80px;}
+    to {right: 100%;}
+}
+
+.jump {animation: jump 800ms ease-out;}
+
+@keyframes jump 
+{
+    0% {bottom: 30px;}
+    40% {bottom: 230px;}
+    50% {bottom: 230px;}
+    60% {bottom: 230px;}
+    100% {bottom: 30px;}
+}
