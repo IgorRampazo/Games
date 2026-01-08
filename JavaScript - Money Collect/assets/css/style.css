@@ -1,0 +1,110 @@
+*
+{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+body
+{
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   background: url(../img/bg.jpg) center/cover;
+}
+
+.placar 
+{
+   position: absolute;
+   inset: 20px 20px auto auto;
+   padding: 1rem;
+   width: 220px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background: #454545;
+   border: 6px solid #333;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.placar p 
+{
+   color: #fff;
+   background: #333;
+   width: 150px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1rem;
+   font-weight: 600;
+   letter-spacing: 2px;
+   margin-bottom: 1rem;
+}
+
+.placar .row
+{
+   display: flex;
+   gap: 1rem;
+   width: 100%;
+}
+
+.placar .row .pontuacao
+{
+   display: flex;
+   flex-direction: column;
+   gap: .5rem;
+   width: 50%;
+}
+
+.placar .row .pontuacao span:first-child
+{
+   font-size: .8rem;
+   letter-spacing: 2px;
+   color: #ccc;
+   font-weight: 600;
+}
+
+.placar .row .pontuacao :is(.sprites, .moedas)
+{
+   background: #606060;
+   border: 4px solid #333;
+   padding: .3rem;
+   color: #fff;
+   letter-spacing: 3px;
+   font-weight: 900;
+}
+
+.sword.atackRight {animation: swordRight 1s;}
+.sword.atackLeft {animation: swordLeft 1s;}
+.sprite.death {animation: death 1.5s forwards;}
+.personagem.death {animation: deathPersona 1.5s forwards;}
+
+@keyframes swordRight 
+{
+   0%, 100% { transform: translate(0, 0); }
+   50% { transform: translate(20px, -30px); }
+}
+
+@keyframes swordLeft 
+{
+   0%, 100% { transform: translate(0, 0) scaleX(-1); }
+   50% { transform: translate(-20px, -30px) scaleX(-1); }
+}
+
+@keyframes death 
+{
+   0% { transform: rotate(0deg) translate(0, 0); }
+   50% { transform: rotate(90deg) translate(50px, 100px); }
+   90%, 100% { opacity: 0; display: none; }
+}
+
+@keyframes deathPersona 
+{
+   0% { transform: translateY(0); }
+   50%, 90%, 100% { transform: translateY(100px); opacity: 0; display: none; }
+}
